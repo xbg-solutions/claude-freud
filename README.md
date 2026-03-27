@@ -25,8 +25,7 @@ Claude Freud surfaces all of this.
 - [Claude Code](https://claude.ai/code) installed and configured (v2.1.59+ for auto memory)
 - Node.js 18+
 - Auto memory enabled in your Claude Code sessions (`/memory` to check)
-
-Claude Freud reads your Claude Code credentials directly — no separate API key setup required.
+- [Anthropic API key](https://console.anthropic.com/settings/keys) (separate from Claude subscription)
 
 ---
 
@@ -63,6 +62,30 @@ To uninstall:
 ```bash
 npm uninstall -g claude-freud
 ```
+
+---
+
+## Setup
+
+After installation, configure your API key:
+
+```bash
+# Get your API key from https://console.anthropic.com/settings/keys
+cfreud config set-key <your-api-key>
+
+# Verify it works
+cfreud config check
+
+# View current configuration
+cfreud config show
+```
+
+**Configuration priority:**
+1. `ANTHROPIC_API_KEY` environment variable (if set)
+2. `~/.claude-freud/config.json` (set via `config set-key`)
+3. `~/.claude/settings.json` (Claude Code config, if available)
+
+**Note:** API usage has separate pricing from Claude subscriptions. See [anthropic.com/pricing](https://anthropic.com/pricing)
 
 ---
 
@@ -108,6 +131,14 @@ cfreud homogenize navmaps      # scoped to one project
 ```
 
 Identifies architectural patterns, preferences, and approaches that appear across projects and are worth promoting to your global `~/.claude/CLAUDE.md`. If no global CLAUDE.md exists, `--apply` creates one from scratch.
+
+### Manage configuration
+
+```bash
+cfreud config set-key <api-key>   # Store your Anthropic API key
+cfreud config show                # Show current configuration sources
+cfreud config check               # Validate API key is working
+```
 
 ---
 
