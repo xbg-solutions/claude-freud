@@ -1,0 +1,35 @@
+# Source files
+src/
+tsconfig.json
+
+# Development
+node_modules/
+.git/
+.gitignore
+package-lock.json
+
+# Development tools
+tsx
+*.log
+
+# Tests (if you add them later)
+test/
+tests/
+*.test.ts
+*.spec.ts
+
+# Documentation source
+docs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude
+.claude/

@@ -32,12 +32,26 @@ Claude Freud reads your Claude Code credentials directly — no separate API key
 
 ## Installation
 
+### Option 1: Install from npm (recommended)
+
 ```bash
-# Clone
-git clone https://github.com/your-org/claude-freud.git
+npm install -g claude-freud
+```
+
+### Option 2: Install from GitHub
+
+```bash
+npm install -g https://github.com/xbg-solutions/claude-freud.git
+```
+
+### Option 3: Install from local build
+
+```bash
+# Clone the repository
+git clone https://github.com/xbg-solutions/claude-freud.git
 cd claude-freud
 
-# Install and build
+# Install dependencies and build
 npm install
 npm run build
 
@@ -45,10 +59,9 @@ npm run build
 npm link
 ```
 
-Or install directly:
-
+To uninstall:
 ```bash
-npm install -g claude-freud
+npm uninstall -g claude-freud
 ```
 
 ---
