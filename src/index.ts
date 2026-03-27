@@ -8,6 +8,7 @@ import { listProjects } from './commands/list.js'
 import { summaryCommand } from './commands/summary.js'
 import { compareCommand } from './commands/compare.js'
 import { homogenizeCommand } from './commands/homogenize.js'
+import { setApiKey, showConfig, checkConfig } from './commands/config.js'
 import { header } from './lib/output.js'
 
 const program = new Command()
@@ -32,6 +33,35 @@ program
       console.error(chalk.red(`\n  ${err}\n`))
       process.exit(1)
     }
+  })
+
+// Config management command
+const configCmd = program
+  .command('config')
+  .description('Manage API key and configuration')
+
+configCmd
+  .command('set-key <api-key>')
+  .description('Store your Anthropic API key')
+  .action(async (apiKey) => {
+    console.log(header())
+    await setApiKey(apiKey)
+  })
+
+configCmd
+  .command('show')
+  .description('Show current configuration sources')
+  .action(async () => {
+    console.log(header())
+    await showConfig()
+  })
+
+configCmd
+  .command('check')
+  .description('Validate API key is working')
+  .action(async () => {
+    console.log(header())
+    await checkConfig()
   })
 
 program
