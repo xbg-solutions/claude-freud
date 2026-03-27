@@ -1,0 +1,10 @@
+import type { ProjectAnalysis, HomogenizeProposal } from '../types.js';
+declare function parseAnalysisResponse(raw: string, projectId: string, projectName: string): ProjectAnalysis;
+export declare function formatSummaryTerminal(raw: string, projectId: string, projectName: string): string;
+export declare function formatSummaryMd(raw: string, projectId: string, projectName: string): string;
+export declare function formatCompareTerminal(raw: string, nameA: string, nameB: string): string;
+export declare function formatCompareMd(raw: string, nameA: string, nameB: string): string;
+export declare function formatHomogenizeTerminal(proposal: HomogenizeProposal): string;
+export declare function formatHomogenizeMd(proposal: HomogenizeProposal): string;
+export declare function header(): string;
+export { parseAnalysisResponse };
